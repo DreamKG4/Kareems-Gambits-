@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Kareem's Gambits | Kareem's Tales</title>
+	<link href="Kareem.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+	function startGame()
+	{
+		var gender = "boy";
+		var city = " ";
+		var monster = " ";
+		var food = " ";
+		var drink = " ";
+		numYears = prompt("Enter a number greater than 0: ");
+		gender = prompt("Is the story about a boy or a girl? ");
+		letter = gender.charAt(0);
+		gender = (letter == "b" || letter == "B")?"boy":"girl";
+		pronoun = (gender == "boy")?"he":"she";
+		name = prompt("Enter the hero's name: ");
+		city = prompt("Enter the name of a city: ");
+		monster = prompt("Enter a type of monster: ");
+		food = prompt("Enter a food you like: ");
+		drink = prompt("Enter a drink you like: ");
+		document.getElementById("content").innerHTML =("Once upon a time, about " + numYears + " years ago, there was a "+ gender + " named " + name + ". " + name + " lived in a small cabin in the woods just outside the limits of " + city + ".</p> <p>" + name + " enjoyed walking in the woods every day until... One day " + pronoun + " came upon a " + monster + " sitting on a log eating a " + food + ".</p> <p>The " + monster + " jumped up, spilling his " + drink + ". " + name + " ran home as fast as " + pronoun + " could but the " + monster + " followed and ...</p><h3>What happened? You decide! </h3> <p>Ending 1: The " + monster + " and " + name + " became best friends and lived in " + name + "'s house happily ever after.</p> <p>Ending 2: The " + monster + " overpowered " + name + " and gobbled down all the " + food + " and " + drink + " in " + name + "'s refrigerator.</p> <p>Ending 3: " + name + " screamed mean things at the " + monster + ", causing the " + monster + " to turn and run back to the woods, never to be seen again.</p>");
+		}
+	</script>
+	</head>
+	<body>
+		<div id="container">
+		<img src="images/superhero.jpg" class="floatleft" />
+		<center><h1><em>Kareem's Tales</em></h1></center>
+		
+		<h3 align="center">For this game, you will create a story by entering words as prompted. The story will change each time you run this game, as you enter different words.</h3>
+		 <p>&nbsp;</p>
+		 
+		<div id="nav" class="floatleft">
+			<p><a href="index.html">Home</a>
+			<a href="play_games.html">Play a Game</a>
+			<a href="aboutyou.html">Sign In</a>
+			</div>
+		<div id="content">
+			<p>&nbsp;</p>
+			<center><input type="button" value = "click to begin" onclick="startGame()" /></center>
+		</div>
+		<center><div id="footer">Copyright &copy; 2017 Kareem's Gambits<br />
+			<a href="mailto:yourfirstname@yourlastname.com"> Dream Inc.</a>
+		</div> 
+		</div>
+	</body>
+</html>

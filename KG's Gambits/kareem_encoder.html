@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Greg's Gambits | Secret Message Encoder</title>
+	<link href="Kareem.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function encodeIt()
+{
+ 		 document.getElementById("message").innerHTML  = ("<h2>&nbsp;</h2>");
+		 var msg= prompt("Enter your message." , " ");
+		 var newmsg = " ";
+		 var upCaseCode = 155;
+		 var newCode = 0;
+		 var lowCaseCode = 219;
+		 var specialCode = 3;
+		 //the loop encodes each letter in the message string
+		 for (var j = 0; j < msg.length; j++)
+		 {
+		  	 //check for upppercase letters and encode them
+			 if ((msg.charCodeAt(j) >= 65) && (msg.charCodeAt(j) <= 90))
+			 	{	newcode = (upCaseCode - msg.charCodeAt(j));	 }
+			else 
+			//check for lowercase letters and encode them
+				 if ((msg.charCodeAt(j) >= 97) && (msg.charCodeAt(j) <= 122)) 
+				 	{	newcode = (lowCaseCode - msg.charCodeAt(j)); }
+				else
+			//check for numbers and special characters and encode them
+					if (((msg.charCodeAt(j) > 90) && (msg.charCodeAt(j) < 97)) || (msg.charCodeAt(j) < 65))
+					   {	newcode = (msg.charCodeAt(j) + specialCode); 	}
+			//add each encoded character to the new message
+			  newmsg = newmsg + " " + String.fromCharCode(newcode);
+		 }
+		 //display the encoded message on the web page
+		 document.getElementById("secret").innerHTML = ("<h2>" + newmsg + "</h2>");
+		 //decide if original message should be shown
+		 var choice = prompt("Do you want the original message displayed? Yes or No?", " ");
+		 if ((choice.charAt(0) == 'y') || (choice.charAt(0) == 'Y'))
+		 {
+			 	document.getElementById("message").innerHTML  = ("<h2>" + msg + "</h2>");
+   			}
+}
+</script>
+</head>
+
+<body>
+<div id="container">
+ <img src="images/superhero.jpg" width="120" height="120" class="floatleft" />
+ <h1 id="logo"><em>The Secret Message Encoder</em></h1>
+ <p>&nbsp;</p>
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="sign.html">Sign In</a>
+  <a href="aboutyou.html">Tell Kareem About You</a></p>
+   </div>
+    <p>&nbsp;</p>
+<div id="content">
+	 <center><h2>Write A Message and Encode It</h1>
+<p><input type="button" id="encode" value="Enter your message" onclick="encodeIt();" /></p></center>
+  <table cellpadding="2" width = "90%" align = "center" border="1">
+    <tr> <td align="center" id="secret"><p>encoded message</p></td> </tr> 
+	<tr> <td align="center" id="message">&nbsp;</td> </tr>  </table>
+</div>
+<div id="footer">Copyright &copy; 2017 Kareem's Gambits<br />
+<a href="mailto:yourfirstname@yourlastname.com">Dream Inc.</a>
+</div>
+</div>
+</body>
+</html>

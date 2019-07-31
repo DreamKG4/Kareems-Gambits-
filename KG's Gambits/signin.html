@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Kareem's Gambits | Player Inventory</title>
+<link href="Kareem.css" rel="stylesheet" type="text/css" />
+<script>
+function pickAvatar(picked)
+{
+	var avatar = document.getElementById(picked).value;
+	document.getElementById('myavatar').innerHTML = avatar;
+	document.getElementById('avatar_img').innerHTML = ("<img src = 'images/"+avatar+".jpg' />");
+}
+function getRealName(realname)
+{
+	var real = document.getElementById(realname).value;
+	document.getElementById('real_name').innerHTML = real;
+}
+function getUsername(username)
+{
+	var user = document.getElementById(username).value;
+	document.getElementById('user_name').innerHTML = user;
+}
+function getPoints(points)
+{
+	var pts = document.getElementById(points).value;
+	document.getElementById('user_points').innerHTML = pts;
+}
+function pickWeapons()
+{
+	var i =0; var j = 0; var k = 0;
+	var weapon1 = "";
+	var weapon2 = "";
+	var weapon3 = " ";
+	for (i = 0; i <= 9; i++)
+	{
+		if (document.getElementById('w'+i).checked == true)
+		{
+			weapon1 = document.getElementById('w'+i).value;
+			document.getElementById('weapon_one').innerHTML = weapon1;
+			break;
+		}
+	}
+	for (j = (i+1); j <=9; j++)
+	{
+		if (document.getElementById('w'+j).checked == true)
+		{
+			weapon2 = document.getElementById('w'+j).value;
+			document.getElementById('weapon_two').innerHTML = weapon2;
+			break;
+		}
+	}
+	for (k = (j+1); k <=9; k++)
+	{
+		if (document.getElementById('w'+k).checked == true)
+		{
+			weapon3 = document.getElementById('w'+k).value;
+			document.getElementById('weapon_three').innerHTML = weapon3;
+		}
+	}
+}
+function pickSupplies()
+{
+	var i =0; var j = 0; var k = 0; var m = 0; var p = 0;
+	var supply1 = ""; var supply2 = ""; var supply3 = " "; var supply4 = ""; var supply5 = "";
+	for (i = 0; i <= 9; i++)
+	{
+		if (document.getElementById('s'+i).checked == true)
+		{
+			supply1 = document.getElementById('s'+i).value;
+			document.getElementById('supply_one').innerHTML = supply1;
+			break;
+		}
+	}
+	for (j = (i+1); j <=9; j++)
+	{
+		if (document.getElementById('s'+j).checked == true)
+		{
+			supply2 = document.getElementById('s'+j).value;
+			document.getElementById('supply_two').innerHTML = supply2;
+			break;
+		}
+	}
+	for (k = (j+1); k <=9; k++)
+	{
+		if (document.getElementById('s'+k).checked == true)
+		{
+			supply3 = document.getElementById('s'+k).value;
+			document.getElementById('supply_three').innerHTML = supply3;
+			break;
+		}
+	}
+	for (m = (k+1); m <=9; m++)
+	{
+		if (document.getElementById('s'+m).checked == true)
+		{
+			supply4 = document.getElementById('s'+m).value;
+			document.getElementById('supply_four').innerHTML = supply4;
+			break;
+		}
+	}
+	for (p = (m+1); p <=9; p++)
+	{
+		if (document.getElementById('s'+p).checked == true)
+		{
+			supply5 = document.getElementById('s'+p).value;
+			document.getElementById('supply_five').innerHTML = supply5;
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="container">
+ <img src="images/superhero.jpg" class="floatleft" />
+ <h1 align="center"><em>Your Information and Inventory</em></h1>
+<div style ="clear:both;"></div>  
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="aboutyou.html">Tell Kareem About you</a>
+  </div>
+<div id="content">
+ <h2>Tell Kareem About You</h2>
+<div>
+<div><form name = "inventory">
+<fieldset>
+<h3>Enter the following information:</h3>
+    <p><label>Your name:<br /></label> <input type="text" id="realname" size = "40" value = ""/>
+	<input type ="button" onclick="getRealName('realname')" value = "ok"></button></p>
+	<p><label>Your username:<br /> </label><input type="text" id="username" size="40" value = ""/></label>
+  <input type ="button" onclick="getUsername('username')" value = "ok"></button></p>
+  <p><label>Points to date:<br /></label> <input type="text" id="points" size = "10" value = ""/>
+	<input type ="button" onclick="getPoints('points')" value = "ok"></button></p>
+	</fieldset></div>
+<div style="clear:both;"></div>
+<div> <table width = "100%" border = "2"> <br />
+<tr><td colspan = "5" class = "nobdr"><h3>Your Avatar</h3></td></tr>
+<tr><td class="nobdr"> &nbsp; &nbsp;<img src="images/bunny.jpg" /></td>
+<td class="nobdr"> <img src="images/elf.jpg" /> </td>
+<td class="nobdr"> <img src="images/ghost.jpg" /></td>
+<td class="nobdr"><img src="images/princess.jpg" /></td>
+<td class="nobdr"><img src="images/wizard.jpg" /></td></tr>
+<tr><td class="nobdr">&nbsp; &nbsp;<input type = "radio" name = "avatar" id = "bunny" value = "Bunny" onclick="pickAvatar('bunny')"/></td>
+<td class="nobdr">&nbsp; &nbsp;<input type = "radio" name = "avatar" id = "elf" value = "Elf" onclick="pickAvatar('elf')"/></td>
+<td class="nobdr">&nbsp; &nbsp;<input type = "radio" name = "avatar" id = "ghost" value = "Ghost" onclick="pickAvatar('ghost')"/> </td>
+<td class="nobdr">&nbsp; &nbsp;<input type = "radio" name = "avatar" id = "princess" value = "Princess" onclick="pickAvatar('princess')"/></td>
+<td class="nobdr">&nbsp; &nbsp;<input type = "radio" name = "avatar" id = "wizard" value = "Wizard" onclick="pickAvatar('wizard')"/> </td></tr>
+</table>
+  <div style="width: 50%; float: left;"><fieldset>
+		<h3>Select three weapons to help you in your quest</h3>
+		<input type="checkbox" name="weapons" id="w0" value="Sword" />Sword<br />
+		<input type="checkbox" name="weapons" id="w1" value="Slingshot" />Slingshot<br />
+		<input type="checkbox" name="weapons" id="w2" value="Shield" />Shield<br />
+		<input type="checkbox" name="weapons" id="w3" value="Bow and 10 Arrows" />Bow and 10 Arrows<br />
+		<input type="checkbox" name="weapons" id="w4" value="3 Magic Rocks" />3 Magic Rocks<br />
+		<input type="checkbox" name="weapons" id="w5" value="Knife" />Knife<br />
+		<input type="checkbox" name="weapons" id="w6" value="Staff" />Staff<br />
+		<input type="checkbox" name="weapons" id="w7" value="Wizard's Wand" />Wizard's Wand<br />
+		<input type="checkbox" name="weapons" id="w8" value="Extra Arrows" />10 Extra Arrows<br />
+		<input type="checkbox" name="weapons" id="w9" value="Cloak of Invisibility" />Cloak of Invisibility<br />
+		<input type ="button" onclick="pickWeapons()" value = "Enter my selections" /></button></fieldset></div>
+		 <div style="width: 50%; float: left;"><fieldset>
+		<h3>Select five items to carry with you on your journeys</h3>
+		<input type="checkbox" name="supplies" id="s0" value="3-Day Food Supply" />3-Day Food Supply<br />
+		<input type="checkbox" name="supplies" id="s1" value="Backpack" />Backpack<br />
+		<input type="checkbox" name="supplies" id="s2" value="Kevlar Vest" />Kevlar Vest<br />
+		<input type="checkbox" name="supplies" id="s3" value="3-Day Water Bottle" />3-Day Supply of Water<br />
+		<input type="checkbox" name="supplies" id="s4" value="Box of 5 Firestarters" />Box of 4 Firestarters<br />
+		<input type="checkbox" name="supplies" id="s5" value="Tent" />Tent<br />
+		<input type="checkbox" name="supplies" id="s6" value="First Aid Kit" />First Aid Kit<br />
+		<input type="checkbox" name="supplies" id="s7" value="Warm Jacket" />Warm Jacket<br />
+		<input type="checkbox" name="supplies" id="s8" value="3 Pairs Extra Socks" />3 Pairs Extra Socks<br />
+		<input type="checkbox" name="supplies" id="s9" value="Pen and Notebook" />Pen and Notebook<br />
+		<input type ="button" onclick="pickSupplies()" value = "Enter my selections" /></button></fieldset></div>
+		</div>
+  <div style="clear:both;"></div>
+<div ><br /><input type="reset" value="ooops! I made a mistake. Let me start over."><br /></div>
+<div style="width: 90%; float: left;"><h3>Your information<br />
+Your name: <span  id = "real_name">&nbsp;</span> <br /><br />
+Username: <span  id = "user_name">&nbsp;</span> <br /><br />
+Player points: <span  id = "user_points">&nbsp;</span> <br /><br />
+Avatar: <span  id = "myavatar">&nbsp;</span> <span  id = "avatar_img">&nbsp;</span><br /> <br />
+Weapons:<br />
+<span id = "weapon_one">&nbsp;</span> <br />
+<span id = "weapon_two">&nbsp;</span><br /> 
+<span id = "weapon_three">&nbsp;</span> <br /><br />
+Supplies:<br />
+<span id = "supply_one">&nbsp;</span> <br />
+<span id = "supply_two">&nbsp;</span><br /> 
+<span id = "supply_three">&nbsp;</span> <br />
+<span id = "supply_four">&nbsp;</span><br /> 
+<span id = "supply_five">&nbsp;</span> </h3></div>
+ </div></form>
+ <div style="clear:both;"></div>
+<div id="footer">Copyright &copy; 2017 Kareem's Gambits<br />
+<a href="mailto:yourfirstname@yourlastname.com">Dream Inc</a>
+</div>
+</div>
+</body>
+</html>

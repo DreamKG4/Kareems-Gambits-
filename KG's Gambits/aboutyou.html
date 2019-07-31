@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Kareem's Gambits | Sign Up Now!</title>
+<link href="Kareem.css" rel="stylesheet" type="text/css" />
+<script>
+function getName()
+{
+var name = prompt("Please enter your name", " ")
+document.getElementById('myname').innerHTML = name;
+}
+function getUsername()
+{
+var username = prompt("What do you want for your username", " ")
+document.getElementById('myusername').innerHTML = username;
+}
+function getAvatar()
+{
+window.open('avatars.html');
+}
+function pickAvatar()
+{
+var avatar = prompt("Enter the avatar you want","Bunny");
+document.getElementById('myavatar').innerHTML = avatar;
+}
+</script>
+</head>
+<body>
+<div id="container">
+ <img src="images/superhero.jpg" class="floatleft" />
+ <h1 id="logo">Kareem's Gambits </h1>
+<h2 align="center"><em> Games for Everyone!</em></h2>
+<div style="clear:both;"></div>
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="signin.html">Sign In</a>
+    </p>
+</div>
+<div id="content">
+<p><button type="button" onclick="getName()">Enter your name
+</button></p>
+Hi there, <span id="myname">Kareem</span></p>
+<p><button type="button" onclick="getUsername()">Enter a Username
+</button></p>
+Username: <span id="myusername">KingDream</span></p>
+<p><button type="button" onclick="getAvatar()">See the avatar choices</button>
+<p><button type="button" onclick="pickAvatar()">Select your avatar
+</button><br />
+The avatar you selected is: <span id="myavatar">Kitty</span></p>
+<p>&nbsp;</p>
+<p>Sign up now!</p>
+<p><a href="avatars.html">View information about avatars</a></p>
+<p>&nbsp;</p>
+</div>
+<div id="footer">Copyright &copy; 2017 Dream Inc.<br />
+<a href="mailto:kgrappy4@gmail.com">DreamInc.net</a></div>
+</div>
+</body>
+</html>

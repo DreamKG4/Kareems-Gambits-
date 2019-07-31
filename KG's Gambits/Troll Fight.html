@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Kareem's Gambits | Troll Fight</title>
+	<link href="Kareem.css" rel="stylesheet" type="text/css" />
+<script>
+function fightTroll()
+{
+ 	var trollPoints = 100;
+	var points = parseInt(prompt("How many points do you have?"," "));
+	if (points < trollPoints)
+	{
+	   var gun = prompt("Do you have a gun? (y/n)" , " ");
+	   if (gun == "n")
+	   	  var sword = prompt("Do you have a sword? (y/n)" , " ");
+	 	if (gun == "n" && sword == "n")
+		   var wings = prompt("Do you have wings? (y/n)" , " ");
+		if (wings == "n" && sword == "n" && gun == "n")
+	   	   var dust = prompt("Do you have flying dust? (y/n)" , " ");
+		if 	(wings == "n" && sword == "n" && gun == "n" && dust == "n")
+		     {
+			 	document.write("<h3>You lose... so sad</h3>");
+				document.write("<img src = 'images/troll.jpg' />");
+			 }
+		else if (gun == 'y' || sword == 'y')
+		{
+		document.write("<h3>You are the winner!</h3>");
+		document.write("<img src = 'images/victor.jpg' />");
+		}
+	 	else if (dust == 'y' || wings == 'y')
+		{
+			 document.write("<h3>You can fly away. The battle is a tie.</h3>");
+			 document.write("<img src = 'images/flyaway.jpg' />");
+		}
+			
+	}
+		else
+		{
+		 	if (points == trollPoints)
+			{
+			   document.write("<h3>It's a tie.</h3>");
+			document.write("<img src = 'images/victor.jpg' />");
+			document.write("<img src = 'images/troll.jpg' />");
+			}
+			else
+			{
+		 	document.write("<h3>You are the winner!</h3>");
+			document.write("<img src = 'images/victor.jpg' />");
+			}
+		}
+}
+</script>
+</<head>
+<body>
+<div id="container">
+	<img src="images/superhero.jpg" class="floatleft" />
+	<h1 align = "center">Kareem's Gambits </h1>
+	<h2 align="center"><em> Troll Fight</em></h2>
+	<div style="clear:both;"></div>
+<div id="nav">
+  <p><a href="index.html">Home</a>
+  <a href="play_games.html">Play a Game</a>
+  <a href="sign.html">Sign In</a>
+  <a href="aboutyou.html">Tell Kareem About You</a>
+  </p>
+</div>
+<table align ="center" width ="70%"><tr><td>
+<h1>&nbsp;</h2>
+<center><h1>Battle With the Troll!</h1>
+<p><input type="button" id="battle" value="Push here to begin the battle" onclick="fightTroll();" /></p></center>
+</td></tr></table></body>
+
+</html>
+
